@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant/Cafe</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url('https://t3.ftcdn.net/jpg/02/05/87/60/360_F_205876015_hYYs7ugqoU8QAobSS3TbnGQ92qyS5gEc.jpg'); 
+        background-size: cover;
+        color: rgb(10, 25, 30);
+    }
+
+    header {
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(147, 241, 227, 0); 
+        color: whitesmoke;
+        
+    }
+    .menu, .reservation, .location, .testimonials {
+        margin: 20px;
+        padding: 20px;
+        background: rgba(147, 241, 277,0.5); 
+        backdrop-filter: blur(5px); 
+        border-radius: 10px;
+        font: bolder;
+    
+    }
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(3 , 1fr);
+        gap: 20px;
+        justify-items: center;
+        align-items: center;
+        
+    }
+    
+    .dish {
+        text-align: left;
+    
+        width: 200px; 
+    }
+    
+    .dish img {
+        width: 200px; 
+        height: 200px;
+        object-fit: cover; 
+        border-radius: 10px;
+    }
+    
+    .navbar {
+        background-color: #333;
+        padding: 10px 0;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+    
+    .navbar ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .navbar ul li {
+        display: inline;
+    }
+    
+    .navbar ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 10px 15px;
+        transition: 0.3s;
+    }
+    
+    .navbar ul li a:hover {
+        background-color: #555;
+        border-radius: 5px;
+    }
+    
+    button {
+        --color: #00A97F;
+        padding: 0.8em 1.7em;
+        background-color: transparent;
+        border-radius: .3em;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: .5s;
+        font-weight: 400;
+        font-size: 17px;
+        border: 1px solid;
+        font-family: inherit;
+        text-transform: uppercase;
+        color: var(--color);
+        z-index: 1;
+       }
+       
+       button::before, button::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 50px;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        border-radius: 50%;
+        z-index: -1;
+        background-color: var(--color);
+        transition: 1s ease;
+       }
+       
+       button::before {
+        top: -1em;
+        left: -1em;
+       }
+       
+       button::after {
+        left: calc(100% + 1em);
+        top: calc(100% + 1em);
+       }
+       
+       button:hover::before, button:hover::after {
+        height: 410px;
+        width: 410px;
+       }
+       
+       button:hover {
+        color: rgb(10, 25, 30);
+       }
+       
+       button:active {
+        filter: brightness(.8);
+       }
+       
+       .location a {
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .location a:hover {
+        text-decoration: underline;
+    }
+    
+    footer {
+        background-color: #333; 
+        color: white;
+        text-align: center;
+        padding: 20px;
+        position: absolute;
+        bottom: -10;
+        width: 100%;
+    }
+    .social-media {
+        margin-top: 10px;
+    }
+    .social-media a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+    }
+    
+</style>   
+</head>
+<body>
+    <header>
+        <h1>Welcome to Kenny's Cafe</h1>
+    </header>
+    
+    <nav class="navbar">
+        <ul>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#reservation">Reservation</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+        </ul>
+    </nav>
+    
+
+    <section class="menu">
+        <h2>Menu</h2>
+        <hr>
+        <hr>
+        <div class="dish">
+            <img src="https://kannanskitchen.com/wp-content/uploads/2023/01/DSC_4737-500x500.jpg" alt="Dish 1">
+            <h3>Panner Tikka Masala</h3>
+            <p>Price: 250 INR</p>
+        </div>
+        <div class="dish">
+            <img src="https://dinedelicious.in/wp-content/uploads/2021/10/Kadai-Paneer-Recipe-6.jpg" alt="Dish 2">
+            <h3>Panner kadai</h3>
+            <p>Price: 200 INR</p>
+        </div>
+        <div class="dish">
+            <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2021/08/veg-kadai-3.jpg" alt="Dish 1">
+            <h3>veg kadai</h3>
+            <p>Price: 190 INR</p>
+        </div>
+        <div class="dish">
+            <img src="https://banjarava.com/wp-content/uploads/2022/04/1920x1248-4-1-420x280.jpg" alt="Dish 2">
+            <h3>Veg Banjara</h3>
+            <p>Price: 200 INR</p>
+        </div>
+        <div class="dish">
+            <img src="https://bellyfull.net/wp-content/uploads/2021/05/Chicken-Tikka-Masala-blog.jpg" alt="Dish 1">
+            <h3>Chicken Tikka Masala</h3>
+            <p>Price: 300 INR</p>
+        </div>
+        <div class="dish">
+            <img src="https://pipingpotcurry.com/wp-content/uploads/2024/05/Rogan-Josh-Piping-Pot-Curry-9.jpg" alt="Dish 2">
+            <h3>Mutton rogan josh</h3>
+            <p>Price: 300 INR</p>
+        </div>
+        <div class="dish">
+            <img src="https://www.whiskaffair.com/wp-content/uploads/2018/06/Alleppey-Fish-Curry-2-3-500x375.jpg" alt="Dish 1">
+            <h3>Fish Curry</h3>
+            <p>Price: 250 INR</p>
+        </div>
+        <div class="dish">
+            <img src="https://priyafoods.com/cdn/shop/files/JEERARICE_2_1200x1200.jpg?v=1701948113" alt="Dish 2">
+            <h3>Jeera Rice</h3>
+            <p>Price: 180 INR</p>
+        </div>
+        <div class="dish">
+            <img src="https://www.cookwithkushi.com/wp-content/uploads/2016/04/chicken_tikka_biryani_recipe_best_simple_easy.jpg" alt="Dish 1">
+            <h3>Chicken Tikka Biryani</h3>
+            <p>Price: 300 INR</p>
+        </div>
+        <div class="dish">
+            <img src="https://www.licious.in/blog/wp-content/uploads/2022/06/mutton-hyderabadi-biryani-01.jpg" alt="Dish 2">
+            <h3>Mutton Biryani</h3>
+            <p>Price: 300 INR</p>
+        </div>
+        <div class="dish">
+            <img src="https://www.yumcurry.com/wp-content/uploads/2018/10/IMG_9174-copy.jpg" alt="Dish 1">
+            <h3>Tandoori roti</h3>
+            <p>Price: 30 INR </p>
+        </div>
+        <div class="dish">
+            <img src="https://www.indianveggiedelight.com/wp-content/uploads/2023/03/paneer-paratha-featured.jpg" alt="Dish 2">
+            <h3>Paratha</h3>
+            <p>Price: 80 INR</p>
+        </div>
+
+        
+    </section>
+    
+    <section class="reservation">
+        <h2>Make a Reservation</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="date" required>
+            <input type="time" required>
+            <label for="dish-select">Select a Dish:</label>
+            <select id="dish-select" required>
+                <option value="">--Please choose an option--</option>
+                <option value="dish1">Panner tikka Masala</option>
+                <option value="dish2">Panner kadai</option>
+                <option value="dish3">Veg kadai</option>
+                <option value="dish4">Veg Banjara</option>
+                <option value="dish5">Chicken Tikka Masala</option>
+                <option value="dish6">Mutton Rogan josh</option>
+                <option value="dish7">Fish curry</option>
+                <option value="dish8">Jeera Rice</option>
+                <option value="dish9">Chicken Tikka Biryani</option>
+                <option value="dish10">Mutton Biryani</option>
+                <option value="dish11">Tandori roti</option>
+                <option value="dish12">Paratha</option>
+            </select>
+            <button type="submit">Reserve</button>
+        </form>
+    </section>
+    
+    <section class="location">
+        <h2>Our Location</h2>
+        <p>Visit us at: <a href="https://www.google.com/maps/place/Your+Restaurant+Location" target="_blank">Click here for directions</a></p>
+    </section>
+    
+    <section class="testimonials">
+        <h2>Customer Testimonials</h2>
+        <blockquote>
+            <p>"Amazing food and great service!" - Samuel</p>
+        </blockquote>
+        <blockquote>
+            <p>"A wonderful dining experience!" - Sarah</p>
+        </blockquote>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Restaurant/Cafe Name. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://www.twitter.com" target="_blank">Twitter</a>
+        </div>
+    </footer>
+</body>
+</html>
